@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit">
+</form>
+
+<table>
+    <tr>
+        <td>id</td>
+        <td>Brand</td>
+        <td>Name</td>
+        <td>Specifications</td>
+        <td>Price</td>
+    </tr>
+    {% for mobiles in mobile %}
+
+    <tr>
+        <td>{{mobiles.id }}</td>
+        <td>{{mobiles.mobile_company}}</td>
+        <td>{{mobiles.mobile_name}}</td>
+        <td><a href="{% url 'view' mobiles.id %}">View </a> </td>
+        <td><a href="{% url 'edit' mobiles.id %}">Edit </a> </td>
+        <td><a href="{% url 'delete' mobiles.id %}">Delete </a> </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

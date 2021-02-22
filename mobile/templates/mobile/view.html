@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Brand:</td><td>{{mobile.mobile_company}}</td>
+        </tr>
+
+         <tr>
+            <td>Name:</td><td>{{mobile.mobile_name}}</td>
+        </tr>
+
+         <tr>
+            <td>Specifications:</td><td>{{mobile.mobile_spec}}</td>
+        </tr>
+
+         <tr>
+            <td>Price:</td><td>{{mobile.mobile_price}}</td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
